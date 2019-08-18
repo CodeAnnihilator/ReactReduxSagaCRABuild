@@ -1,0 +1,11 @@
+@import './reset.scss';
+@import './fonts.scss';
+@import './mixins.scss';
+
+body {
+	font-family: 'Fira Sans', sans-serif;
+}
+
+* {
+	box-sizing: unset;
+}

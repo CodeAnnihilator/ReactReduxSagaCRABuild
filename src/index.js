@@ -8,12 +8,13 @@ import App from './pages/App';
 
 import * as serviceWorker from './serviceWorker';
 
-import './index.css';
+import 'resources/styles/index.scss';
 
 ReactDOM.render(
 	<Provider store={configureStore()}>
 		<App />
 	</Provider>,
-	document.getElementById('root'));
+	document.getElementById('root')
+);
 
 serviceWorker.unregister();
