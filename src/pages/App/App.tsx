@@ -3,13 +3,28 @@ import {Trans} from 'react-i18next';
 
 import styles from './app.module.scss';
 
-const App = ({
-	testData,
+interface IApp {
+	isToggled: boolean;
+	data: string;
+	testAction: () => void;
+	testActionWithData: (data: string) => void;
+}
+
+const App: React.FC<IApp> = ({
+	isToggled,
+	data,
 	testAction,
-}: any) => (
-	<div onClick={testAction} className={styles.app}>
-		{testData}
-		<Trans i18nKey='test' />
+	testActionWithData,
+}: IApp) => (
+	<div className={styles.app}>
+		<br />
+		<div onClick={() => testAction()}>
+			{data}{isToggled ? '+' : '-'}
+		</div>
+		<br />
+		<div onClick={() => testActionWithData('new data')}>
+			<Trans i18nKey='test' />
+		</div>
 	</div>
 );
 

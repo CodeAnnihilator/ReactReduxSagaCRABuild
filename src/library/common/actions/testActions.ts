@@ -1,3 +1,9 @@
-import * as types from '../types/testTypes';
+import {createStandardAction} from 'typesafe-actions';
 
-export const testAction = () => ({type: types.TEST_ACTION});
+import {TestTypes} from '../types/testTypes';
+
+export const testAction = createStandardAction(TestTypes.TEST_ACTION)();
+
+export const testActionWithData =
+	createStandardAction(TestTypes.TEST_ACTION_WITH_DATA)
+		<string>();

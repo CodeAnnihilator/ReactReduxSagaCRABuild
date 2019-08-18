@@ -1,16 +1,35 @@
-import * as types from '../types/testTypes';
+import {ActionType, getType} from 'typesafe-actions';
 
-const initialState = {
-	someData: 'test data',
+import * as actions from '../actions/testActions';
+
+export type TestState = Readonly<{
+	isToggled: boolean;
+	data: string;
+}>;
+
+const initialState: TestState = {
+	isToggled: false,
+	data: 'no data',
 };
 
-export default (state = initialState, action: any) => {
+export type TestActions = ActionType<typeof actions>;
+
+export default (state = initialState, action: TestActions): TestState => {
 	switch (action.type) {
-	 case types.TEST_ACTION:
-		return {
-			someData: state.someData + '|',
-		};
-	 default:
-		return state;
+
+		case getType(actions.testAction):
+			return {
+				...state,
+				isToggled: !state.isToggled,
+			};
+
+		case getType(actions.testActionWithData):
+			return {
+				...state,
+				data: action.payload,
+			};
+
+		default:
+			return state;
 	}
 };
