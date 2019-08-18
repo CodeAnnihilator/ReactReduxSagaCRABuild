@@ -1,6 +1,8 @@
 import React from 'react';
 import {Trans} from 'react-i18next';
 
+import HeaderFrame from './Frames/HeaderFrame/';
+
 import styles from './app.module.scss';
 
 interface IApp {
@@ -17,6 +19,7 @@ const App: React.FC<IApp> = ({
 	testActionWithData,
 }: IApp) => (
 	<div className={styles.app}>
+		<HeaderFrame />
 		<br />
 		<div onClick={() => testAction()}>
 			{data}{isToggled ? '+' : '-'}
