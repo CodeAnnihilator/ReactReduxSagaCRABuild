@@ -6,8 +6,8 @@ import App from './App';
 
 const mapStateToProps = () => ({
 	testData: 'asd',
-})
+});
 
 export default connect(mapStateToProps, {
 	testAction,
-})(App)
+})(App);

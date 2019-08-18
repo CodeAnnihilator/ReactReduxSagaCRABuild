@@ -1,16 +1,16 @@
 import * as types from '../types/testTypes';
 
 const initialState = {
-	someData: 'test data'
-}
+	someData: 'test data',
+};
 
-export default (state = initialState, action) => {
+export default (state = initialState, action: any) => {
 	switch (action.type) {
 	 case types.TEST_ACTION:
 		return {
-			someData: state.someData + '|'
-		}
+			someData: state.someData + '|',
+		};
 	 default:
-		return state
+		return state;
 	}
-}
+};

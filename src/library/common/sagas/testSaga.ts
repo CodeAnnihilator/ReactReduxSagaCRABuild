@@ -8,5 +8,5 @@ function* testActionSaga() {
 }
 
 export default function* watchTest() {
-	yield takeLatest(types.TEST_ACTION, testActionSaga)
+	yield takeLatest(types.TEST_ACTION, testActionSaga);
 }

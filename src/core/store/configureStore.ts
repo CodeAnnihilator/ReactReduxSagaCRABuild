@@ -12,8 +12,8 @@ const middlewares = composeWithDevTools(
 );
 
 export default function configureStore(initialState = {}) {
-	const store = createStore(coreReducer, initialState, middlewares)
+	const store = createStore(coreReducer, initialState, middlewares);
 	sagaMiddleware.run(coreSaga);
+
 	return store;
 }
-

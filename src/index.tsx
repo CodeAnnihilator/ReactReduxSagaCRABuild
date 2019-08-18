@@ -10,11 +10,12 @@ import * as serviceWorker from './serviceWorker';
 
 import 'resources/styles/index.scss';
 
-ReactDOM.render(
+ReactDOM.render((
 	<Provider store={configureStore()}>
 		<App />
-	</Provider>,
-	document.getElementById('root')
+	</Provider>
+	),
+	document.getElementById('root'),
 );
 
 serviceWorker.unregister();
