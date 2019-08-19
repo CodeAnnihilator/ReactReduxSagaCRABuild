@@ -7,11 +7,16 @@ import {
 	testActionWithData,
 } from 'library/common/actions/testActions';
 
+import {
+	getIsToggled,
+	getData,
+} from 'library/common/selectors/testSelectors';
+
 import App from './App';
 
 const mapStateToProps = (store: RootState) => ({
-	isToggled: store.test.isToggled,
-	data: store.test.data,
+	isToggled: getIsToggled(store),
+	data: getData(store),
 });
 
 export default connect(mapStateToProps, {

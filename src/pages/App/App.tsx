@@ -5,7 +5,7 @@ import HeaderFrame from './Frames/HeaderFrame/';
 
 import styles from './app.module.scss';
 
-interface IApp {
+export interface IApp {
 	isToggled: boolean;
 	data: string;
 	testAction: () => void;

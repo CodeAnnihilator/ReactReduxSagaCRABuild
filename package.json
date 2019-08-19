@@ -11,6 +11,8 @@
     "@types/react-dom": "^16.8.5",
     "@types/react-redux": "^7.1.2",
     "@types/react-router-dom": "^4.3.4",
+    "@types/react-test-renderer": "^16.9.0",
+    "@types/redux-mock-store": "^1.0.1",
     "axios": "^0.19.0",
     "connected-react-router": "^6.5.2",
     "enzyme": "^3.10.0",
@@ -18,6 +20,7 @@
     "history": "^4.9.0",
     "husky": "^3.0.4",
     "i18next": "^17.0.11",
+    "jest-sonar-reporter": "^2.0.0",
     "node-sass": "^4.12.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -25,8 +28,10 @@
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1",
+    "react-test-renderer": "^16.9.0",
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.8",
+    "redux-mock-store": "^1.5.3",
     "redux-saga": "^1.0.5",
     "tslint": "^5.18.0",
     "tslint-eslint-rules": "^5.4.0",
@@ -39,17 +44,40 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:coverage": "yarn test --coverage --watchAll=false",
+    "test:ci": "yarn test:coverage --testResultsProcessor=./node_modules/jest-sonar-reporter/index.js",
     "lint": "tslint --project tsconfig.json './src/**/*[^.d].ts*'",
     "deploy:test": "aws s3 sync --delete build/ s3://biteport-test",
     "deploy:stage": "aws s3 sync --delete build/ s3://biteport-stage"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint"
+      "pre-commit": "yarn lint",
+      "pre-push": "yarn lint && yarn test:coverage"
     }
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!node_modules/",
+      "!src/index.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    }
+  },
+  "jestSonar": {
+    "sonar56x": true,
+    "reportPath": "coverage",
+    "reportFile": "unit-coverage-report.xml",
+    "indent": 4
   },
   "browserslist": {
     "production": [
