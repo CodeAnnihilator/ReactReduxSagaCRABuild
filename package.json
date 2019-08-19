@@ -40,8 +40,8 @@
     "test": "react-scripts test",
     "test:coverage": "yarn test --coverage --watchAll=false",
     "lint": "tslint --project tsconfig.json './src/**/*[^.d].ts*'",
-    "deploy:test": "aws s3 sync build/ s3://biteport-test --acl public-read",
-    "deploy:stage": "aws s3 sync build/ s3://biteport-stage --acl public-read"
+    "deploy:test": "aws s3 sync build/ s3://biteport-test",
+    "deploy:stage": "aws s3 sync build/ s3://biteport-stage"
   },
   "husky": {
     "hooks": {
