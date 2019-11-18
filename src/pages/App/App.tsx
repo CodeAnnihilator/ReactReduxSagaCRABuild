@@ -1,5 +1,6 @@
 import React from 'react';
 import {Trans} from 'react-i18next';
+import {Link} from 'react-router-dom';
 
 import HeaderFrame from './Frames/HeaderFrame/';
 
@@ -28,6 +29,7 @@ const App: React.FC<IApp> = ({
 		<div onClick={() => testActionWithData('new data')}>
 			<Trans i18nKey='test' />
 		</div>
+		<Link to='/test'>go to test route</Link>
 	</div>
 );
 

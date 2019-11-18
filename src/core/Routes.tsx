@@ -5,7 +5,8 @@ import App from 'pages/App';
 
 const Routes = () => (
 	<Switch>
-		<Route path='/' component={App} />
+		<Route exact path='/' component={App} />
+		<Route path='/test' render={() => <div>test route</div>} />
 	</Switch>
 );
 

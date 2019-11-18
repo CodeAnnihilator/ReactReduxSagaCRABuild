@@ -5,3 +5,9 @@ exports[`App renders correctly 1`] = `
   header
 </div>
 `;
+
+exports[`HeaderFrame renders the heading: HeaderFrame 1`] = `
+<div>
+  header
+</div>
+`;

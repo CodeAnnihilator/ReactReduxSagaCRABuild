@@ -1,5 +1,5 @@
 export default class Storage {
-	private static readonly prefix = 'dentalXRai/';
+	private static readonly prefix = 'orpheus/';
 
 	public static getItem(name: string) {
 		return JSON.parse(localStorage.getItem(this.prefix + name) as any);

@@ -15,7 +15,6 @@
 		"radix": true,
 		"prefer-object-spread": true,
 		"no-var-keyword": true,
-		"no-use-before-declare": true,
 		"no-unsafe-finally": true,
 		"no-this-assignment": false,
 		"no-sparse-arrays": true,

@@ -9,7 +9,7 @@
       "dom",
       "es2018.promise"
     ],
-    "sourceMap": true,
+    "inlineSourceMap": true,
     "allowJs": true,
     "jsx": "react",
     "moduleResolution": "node",
